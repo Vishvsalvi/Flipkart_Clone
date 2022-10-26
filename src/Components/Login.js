@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { auth } from "../fireBase";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,15 +8,8 @@ const Login = () => {
 
   const signIn = (e) => {
     e.preventDefault();
-    if(email&&password){
-      auth.signInWithEmailAndPassword(email, password).then((auth)=>{
-        navigate('/');
-      }).catch((err)=>{
-        alert("No account found, Sign up to create a new account")
-      })
-    }else{
-      alert("Invalid email or password")
-    }
+    navigate('/');
+    
   };
 
   return (

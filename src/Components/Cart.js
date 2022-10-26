@@ -24,7 +24,7 @@ const Cart = () => {
     <section>
       <h1 className="sr-only">Checkout</h1>
 
-      <div className="relative mx-auto max-w-screen-2xl">
+      <div className="relative mx-auto pt-5 max-w-screen-2xl">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="bg-white py-12 md:pt-24 md:pb-[35em]">
             <div className="mx-auto max-w-lg px-4 lg:px-8">

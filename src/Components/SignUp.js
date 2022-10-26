@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { auth } from "../fireBase";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -10,22 +9,8 @@ const SignUp = () => {
 
   const createAccount = (e) => {
     e.preventDefault();
-    if (signUpPassword === confirmPass) {
-      auth
-        .createUserWithEmailAndPassword(signUpemail, confirmPass)
-        .then((auth) => {
-          //   console.log(auth);
-          console.log("Successfully created account");
-          if (auth) {
-            navigate("/");
-          }
-        })
-        .catch((err) => {
-          alert("Account already exist");
-        });
-    } else {
-      alert("Password doesn't match in both the fields");
-    }
+    navigate("/");
+   
   };
 
   return (
