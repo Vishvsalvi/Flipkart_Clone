@@ -107,7 +107,7 @@ const Footer = React.memo(() => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-2">
         <div>
           <p className="font-medium">Support</p>
 
