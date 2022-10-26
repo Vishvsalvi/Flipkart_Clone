@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { TaskContext } from "../App";
-import { auth } from "../fireBase";
 
 const NewNav = ({ count }) => {
   const { state } = useContext(TaskContext);
   const logOut = ()=>{
-    auth.signOut();
-
+    
   }
 
   return (

@@ -1,11 +1,10 @@
 import Cart from "./Components/Cart";
-import React, { useEffect, useReducer } from "react";
+import React, { useReducer } from "react";
 import Login from "./Components/Login";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import SharedLayout from "./Components/SharedLayout";
 import Home from "./Components/Home";
 import SignUp from "./Components/SignUp";
-import { auth } from "./fireBase";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Orders from "./Components/Orders";
@@ -17,18 +16,7 @@ const promise = loadStripe(
 );
 
 function App() {
-  useEffect(() => {
-    auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        dispatch({ type: "SET_USER", logIn: authUser.email });
-        console.log("Signed in");
-        console.log(authUser.email);
-      } else {
-        dispatch({ type: "SET_USER", logIn: null });
-        console.log("Signed out");
-      }
-    });
-  }, []);
+  
 
   function reducer(state, action) {
     if (action.type === "ADD_ITEM") {
